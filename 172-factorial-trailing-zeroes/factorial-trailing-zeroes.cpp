@@ -6,7 +6,6 @@ public:
 
         for(int i = 5; i <= n; i*=5)
         {
-
             res = res + n/i;
         }
         return res;
