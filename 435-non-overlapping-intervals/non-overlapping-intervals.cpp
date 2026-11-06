@@ -5,7 +5,7 @@ public:
 
         if(n==0) return 0;
 
-        sort(intervals.begin(),intervals.end(),[](auto a, auto b){
+        sort(intervals.begin(),intervals.end(),[](const auto& a,const auto& b){
             return a[1] < b[1];
         });
         
