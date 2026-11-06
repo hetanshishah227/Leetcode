@@ -12,16 +12,12 @@ public:
         double units = 0;
 
         for(int i = 0; i < n; i++){
-            if(boxTypes[i][0] <= truckSize){
-                units += boxTypes[i][0] * boxTypes[i][1];
-                truckSize -= boxTypes[i][0];
-            }
 
-            else{
-                units += truckSize * boxTypes[i][1];
-                break;
-            }
+            int boxesToTake = min(truckSize,boxTypes[i][0]);
+            units += boxesToTake * boxTypes[i][1];
+            truckSize -= boxesToTake;
 
+            if(truckSize == 0) break;
         }
         return units;
     }
