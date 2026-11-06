@@ -13,8 +13,12 @@ public:
 
         for(int i = 0; i < n; i++){
 
-            int boxesToTake = min(truckSize,boxTypes[i][0]);
-            units += boxesToTake * boxTypes[i][1];
+            int numBoxes = boxTypes[i][0];
+            int unitsPerBox = boxTypes[i][1];
+
+
+            int boxesToTake = min(truckSize,numBoxes);
+            units += boxesToTake * unitsPerBox;
             truckSize -= boxesToTake;
 
             if(truckSize == 0) break;
